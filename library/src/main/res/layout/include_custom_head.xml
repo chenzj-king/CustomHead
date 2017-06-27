@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_toolbar_rl"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:gravity="center_vertical"
+    android:splitMotionEvents="false"
+    >
+
+    <RelativeLayout
+        android:id="@+id/custom_head_left_rl"
+        android:layout_width="80dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/custom_head_left_iv"
+            style="@style/HeadLeftIv"
+            />
+
+        <TextView
+            android:id="@+id/custom_head_left_tv"
+            style="@style/HeadLeftTv"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/custom_head_right_rl"
+        android:layout_toRightOf="@+id/custom_head_left_rl"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/custom_head_title_tv"
+            style="@style/HeadTitleTv"
+            android:text=""
+            />
+
+        <TextView
+            android:id="@+id/custom_head_subtitle_tv"
+            style="@style/SubTitleTv"
+            android:text=""
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/custom_head_right_rl"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        >
+
+
+        <ImageView
+            android:id="@+id/custom_head_right_iv"
+            style="@style/HeadRightIv"
+            />
+
+        <TextView
+            android:id="@+id/custom_head_right_tv"
+            style="@style/HeadRightTv"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/custom_head_line_view"
+        style="@style/HeadViewLine"
+        />
+
+</RelativeLayout>

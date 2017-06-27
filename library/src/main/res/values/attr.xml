@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomHead">
+        <attr name="background_color" format="integer"/>
+        <attr name="left_text" format="string"/>
+        <attr name="left_res" format="reference"/>
+        <attr name="title_text" format="string"/>
+        <attr name="sub_title_text" format="string"/>
+        <attr name="right_text" format="string"/>
+        <attr name="right_res" format="reference"/>
+        <attr name="isShowLine" format="boolean"/>
+    </declare-styleable>
+
+</resources>

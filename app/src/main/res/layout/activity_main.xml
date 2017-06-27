@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.dreamliner.lib.customhead.CustomHead
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isShowLine="true"
+        app:left_text="返回"
+        app:right_text="菜单"
+        app:sub_title_text="二级标题二级标题二级标题二级标题二级标题二级标题二级标题二级标题二级标题二级标题二级标题"
+        app:title_text="一级标题一级标题一级标题一级标题一级标题"
+        />
+
+</LinearLayout>
