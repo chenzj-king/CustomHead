@@ -38,7 +38,7 @@ publish {
     userOrg = 'chenzj-king'
     groupId = 'com.dreamliner.lib'
     artifactId = 'DreamLinerCustomHead'
-    publishVersion = '1.0.0'
+    publishVersion = '1.1.0'
     desc = 'It\'s a custom head view'
     website = 'https://github.com/chenzj-king/CustomHead'
     bintrayUser = bintrayUserVal

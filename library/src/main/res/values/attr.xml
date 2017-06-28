@@ -2,12 +2,16 @@
 <resources>
 
     <declare-styleable name="CustomHead">
-        <attr name="background_color" format="integer"/>
+        <attr name="background_color" format="reference"/>
         <attr name="left_text" format="string"/>
+        <attr name="left_text_color" format="reference"/>
         <attr name="left_res" format="reference"/>
         <attr name="title_text" format="string"/>
+        <attr name="title_text_color" format="reference"/>
         <attr name="sub_title_text" format="string"/>
+        <attr name="sub_title_text_color" format="reference"/>
         <attr name="right_text" format="string"/>
+        <attr name="right_text_color" format="reference"/>
         <attr name="right_res" format="reference"/>
         <attr name="isShowLine" format="boolean"/>
     </declare-styleable>

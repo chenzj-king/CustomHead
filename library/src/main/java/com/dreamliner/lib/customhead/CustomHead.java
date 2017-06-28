@@ -30,11 +30,15 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
     private View mLineView;
 
     private int mBackGroundColorRes;
-    private String mLeftStr = "";
+    private CharSequence mLeftStr = "";
+    private int mLeftColorRes;
     private int mLeftRes;
-    private String mTitleStr = "";
-    private String mSubTitleStr = "";
-    private String mRightStr = "";
+    private CharSequence mTitleStr = "";
+    private int mTitleColorRes;
+    private CharSequence mSubTitleStr = "";
+    private int mSubTitleColorRes;
+    private CharSequence mRightStr = "";
+    private int mRightColorRes;
     private int mRightRes;
     private boolean isShowLine;
 
@@ -54,10 +58,14 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
         try {
             mBackGroundColorRes = attributes.getResourceId(R.styleable.CustomHead_background_color, 0);
             mLeftStr = attributes.getString(R.styleable.CustomHead_left_text);
+            mLeftColorRes = attributes.getResourceId(R.styleable.CustomHead_left_text_color, 0);
             mLeftRes = attributes.getResourceId(R.styleable.CustomHead_left_res, 0);
             mTitleStr = attributes.getString(R.styleable.CustomHead_title_text);
+            mTitleColorRes = attributes.getResourceId(R.styleable.CustomHead_title_text_color, 0);
             mSubTitleStr = attributes.getString(R.styleable.CustomHead_sub_title_text);
+            mSubTitleColorRes = attributes.getResourceId(R.styleable.CustomHead_sub_title_text_color, 0);
             mRightStr = attributes.getString(R.styleable.CustomHead_right_text);
+            mRightColorRes = attributes.getResourceId(R.styleable.CustomHead_right_text_color, 0);
             mRightRes = attributes.getResourceId(R.styleable.CustomHead_right_res, 0);
             isShowLine = attributes.getBoolean(R.styleable.CustomHead_isShowLine, false);
         } finally {
@@ -88,7 +96,7 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
 
     public void refreshView() {
         if (mBackGroundColorRes != 0) {
-            mParentRl.setBackgroundColor(mBackGroundColorRes);
+            mParentRl.setBackgroundColor(getResources().getColor(mBackGroundColorRes));
         } else {
             mParentRl.setBackgroundColor(getResources().getColor(android.R.color.white));
         }
@@ -96,6 +104,9 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
             mLeftTv.setText(mLeftStr);
             mLeftTv.setVisibility(VISIBLE);
             mLeftIv.setVisibility(INVISIBLE);
+            if (mLeftColorRes != 0) {
+                mLeftTv.setTextColor(getResources().getColor(mLeftColorRes));
+            }
         } else if (mLeftRes != 0) {
             mLeftIv.setImageResource(mLeftRes);
             mLeftTv.setVisibility(INVISIBLE);
@@ -107,11 +118,17 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
 
         if (!TextUtils.isEmpty(mTitleStr)) {
             mTitleTv.setText(mTitleStr);
+            if (mTitleColorRes != 0) {
+                mTitleTv.setTextColor(getResources().getColor(mTitleColorRes));
+            }
         }
 
         if (!TextUtils.isEmpty(mSubTitleStr)) {
             mSubTitleTv.setVisibility(VISIBLE);
             mSubTitleTv.setText(mSubTitleStr);
+            if (mSubTitleColorRes != 0) {
+                mSubTitleTv.setTextColor(getResources().getColor(mSubTitleColorRes));
+            }
         } else {
             mSubTitleTv.setVisibility(GONE);
         }
@@ -120,6 +137,9 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
             mRightTv.setText(mRightStr);
             mRightTv.setVisibility(VISIBLE);
             mRightIv.setVisibility(INVISIBLE);
+            if (mRightColorRes != 0) {
+                mRightTv.setTextColor(getResources().getColor(mRightColorRes));
+            }
         } else if (mRightRes != 0) {
             mRightIv.setImageResource(mRightRes);
             mRightTv.setVisibility(INVISIBLE);
@@ -159,7 +179,7 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
         return mRightIv;
     }
 
-    public void setLeftStr(String leftStr) {
+    public void setLeftStr(CharSequence leftStr) {
         mLeftStr = leftStr;
         refreshView();
     }
@@ -169,17 +189,17 @@ public class CustomHead extends RelativeLayout implements View.OnClickListener {
         refreshView();
     }
 
-    public void setTitleStr(String titleStr) {
+    public void setTitleStr(CharSequence titleStr) {
         mTitleStr = titleStr;
         refreshView();
     }
 
-    public void setSubTitleStr(String subTitleStr) {
+    public void setSubTitleStr(CharSequence subTitleStr) {
         mSubTitleStr = subTitleStr;
         refreshView();
     }
 
-    public void setRightStr(String rightStr) {
+    public void setRightStr(CharSequence rightStr) {
         mRightStr = rightStr;
         refreshView();
     }
